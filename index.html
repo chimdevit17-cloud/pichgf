@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="card">
+    <!-- Page 1: the question -->
+    <section class="page active" id="page-ask">
+      <div class="heart"><img src="images/pich.webp" alt="" width="300" height="300"></div>
+      <h1>Hey,Pich Pich! </h1>
+      <p>I have a little question for you...<br>Do you love me? </p>
+      <div class="row">
+        <button class="btn-no" id="btn-no">NO 🥺</button>
+        <button class="btn-yes" id="btn-yes">YES 💖</button>
+      </div>
+      <div class="note">No pressure choose whichever answer feels right.</div>
+    </section>
+
+    <!-- Page 2: after NO -->
+    <section class="page" id="page-no">
+      <div class="heart">💗</div>
+      <h1>It's okay Pich</h1>
+      <div class="panel">
+        <strong>Maybe I'm not perfect,but i still love you alone</strong>
+        <p>No pressure. Thank you for being honest with me. </p>
+      </div>
+      <button class="btn-main" id="btn-back">Back </button>
+      <div class="note status" id="status-no"></div>
+    </section>
+
+    <!-- Page 3: after YES -->
+    <section class="page" id="page-yes">
+      <div class="heart">💗</div>
+      <h1>Yay!! You click Yes that's mean you are interested in me🥰💖</h1>
+      <p class="intro">Let's plan our little date. </p>
+      <form id="form-plan">
+        <label for="f-love">Can You be my girlfriend🥺? </label>
+        <select id="f-love" required>
+          <option value="" disabled selected>Choose an answer</option>
+          <option value="Yes">Yes </option>
+          <option value="No">No </option>
+          
+        </select>
+
+        <label for="f-date">What date you want to go on? </label>
+        <input type="date" id="f-date" required>
+
+        <label for="f-time">What time? </label>
+        <select id="f-time" required></select>
+
+        <label for="f-food">What food do you like? </label>
+        <select id="f-food" required></select>
+
+        <label for="f-place">Where do you want to go? </label>
+        <input type="text" id="f-place" placeholder="Where do you want to go?" maxlength="120" required>
+
+        <button type="submit" class="btn-main" id="btn-send">Send</button>
+        <div class="note status" id="status-yes"></div>
+      </form>
+    </section>
+
+    <!-- Page 4: after sending -->
+    <section class="page" id="page-done">
+      <div class="heart"></div>
+      <h1>Your message has been sent to devit!</h1>
+      <div class="panel">
+        <strong>Can't wait to see you. </strong>
+        <p id="summary"></p>
+      </div>
+      <button class="btn-main" id="btn-edit">Change my choices</button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+   :root {
+      --ink: #4a1d3a;
+      --muted: #7a5a6c;
+      --pink: #ec4084;
+      --pink-soft: #f9e3ec;
+      --card: #ffffff;
+      --field: #e9b8cf;
+      --panel: #fff0f5;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(155deg, #ffdce8 0%, #fff0f5 45%, #f5dcff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card);
+      border-radius: 32px;
+      padding: 36px 22px 26px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(236, 64, 132, .18);
+    }
+
+    .page {
+      display: none
+    }
+
+    .page.active {
+      display: block;
+      animation: pop .35s ease
+    }
+
+    @keyframes pop {
+      from {
+        opacity: 0;
+        transform: scale(.97)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .page.active {
+        animation: none
+      }
+    }
+
+    .heart {
+      font-size: 64px;
+      line-height: 1;
+      margin-bottom: 10px
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 27px
+    }
+
+    p {
+      margin: 0 0 22px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--muted)
+    }
+
+    .row {
+      display: flex;
+      gap: 14px
+    }
+
+    button {
+      font: inherit;
+      font-weight: 700;
+      font-size: 17px;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 16px 18px;
+      transition: transform .12s, filter .12s;
+    }
+
+    button:hover {
+      filter: brightness(.97)
+    }
+
+    button:active {
+      transform: scale(.97)
+    }
+
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 3px solid #ffb3d1;
+      outline-offset: 2px
+    }
+
+    .btn-no {
+      flex: 1;
+      background: var(--pink-soft);
+      color: #7a3d62
+    }
+
+    .btn-yes,
+    .btn-main {
+      flex: 1;
+      background: var(--pink);
+      color: #fff
+    }
+
+    .btn-main {
+      width: 100%
+    }
+
+    button:disabled {
+      opacity: .6;
+      cursor: wait
+    }
+
+    .note {
+      margin: 16px 0 0;
+      font-size: 13px;
+      color: #8b7a85;
+      line-height: 1.5
+    }
+
+    .status {
+      min-height: 1.2em
+    }
+
+    .panel {
+      background: var(--panel);
+      border-radius: 20px;
+      padding: 22px 18px;
+      margin-bottom: 26px
+    }
+
+    .panel strong {
+      display: block;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 14px
+    }
+
+    .panel p {
+      margin: 0
+    }
+
+    form {
+      text-align: left
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      font-size: 15px;
+      margin: 16px 0 8px
+    }
+
+    input,
+    select {
+      width: 100%;
+      font: inherit;
+      font-size: 17px;
+      color: var(--ink);
+      background: #fff;
+      border: 1.5px solid var(--field);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    form .btn-main {
+      margin-top: 24px
+    }
+
+    form .note {
+      text-align: center
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 6px;
+      font-size: 16px
+    }
+
+    .img {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 16px
+    }
+
+    .heart img {
+      display: inline-block;
+      transform-origin: 50% 90%;
+      /* ចំណុចបង្វិលនៅជើងរូប */
+      animation: sway 2.4s ease-in-out infinite;
+      filter: drop-shadow(0 10px 12px rgba(236, 64, 132, .25));
+    }
+
+    @keyframes sway {
+
+      0%,
+      100% {
+        transform: rotate(-8deg)
+      }
+
+      50% {
+        transform: rotate(8deg)
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .heart img {
+        animation: none
+      }
+    }
